@@ -1,6 +1,6 @@
 %define		mainpkg_snap 2003-09-15
 Summary:	Bluetooth headset controlling program
-Summary(pl):	Program do kontroli zestawu sluchawkowego Bluetooth
+Summary(pl):	Program do kontroli zestawu s³uchawkowego Bluetooth
 Name:		bluezsco
 Version:	0.1
 Release:	0.1
@@ -9,13 +9,17 @@ Group:		Applications/Sound
 Source0:	http://www.dcs.gla.ac.uk/~jp/snd-bluez-sco/snd-bluez-sco-%{mainpkg_snap}.tar.gz
 #Source0-MD5:	c7ef302f3fcae934eb3935267cf557c8
 URL:		http://www.dcs.gla.ac.uk/~jp/snd-bluez-sco/
-BuildRequires:	alsa-driver-devel
+BuildRequires:	alsa-driver-devel >= 0.9.7a-2
+BuildRequires:	alsa-lib-devel >= 0.9.7-2
+BuildRequires:	bluez-libs-devel
 Requires:	kernel-sound-alsa
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-empty
+bluezsco is a utility to control Bluetooth headset.
 
+%description -l pl
+bluezsco to narzêdzie do sterowania zestawem s³uchawkowym Bluetooth.
 
 %prep
 %setup -q -n snd-bluez-sco-%{mainpkg_snap}
@@ -23,14 +27,14 @@ empty
 %build
 cd %{name}-%{version}
 
-%configure2_13
+%configure
 %{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
-# create directories if necessary
 install -d $RPM_BUILD_ROOT%{_bindir}
-cp %{name}-%{version}/%{name} $RPM_BUILD_ROOT%{_bindir}
+
+install %{name}-%{version}/%{name} $RPM_BUILD_ROOT%{_bindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
