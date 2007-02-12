@@ -1,6 +1,6 @@
 %define		mainpkg_snap 2003-09-15
 Summary:	Bluetooth headset controlling program
-Summary(pl):	Program do kontroli zestawu s³uchawkowego Bluetooth
+Summary(pl.UTF-8):   Program do kontroli zestawu sÅ‚uchawkowego Bluetooth
 Name:		bluezsco
 Version:	0.1
 Release:	0.1
@@ -18,8 +18,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 bluezsco is a utility to control Bluetooth headset.
 
-%description -l pl
-bluezsco to narzêdzie do sterowania zestawem s³uchawkowym Bluetooth.
+%description -l pl.UTF-8
+bluezsco to narzÄ™dzie do sterowania zestawem sÅ‚uchawkowym Bluetooth.
 
 %prep
 %setup -q -n snd-bluez-sco-%{mainpkg_snap}
