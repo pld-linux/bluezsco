@@ -1,6 +1,6 @@
 %define		mainpkg_snap 2003-09-15
 Summary:	Bluetooth headset controlling program
-Summary(pl.UTF-8):   Program do kontroli zestawu słuchawkowego Bluetooth
+Summary(pl.UTF-8):	Program do kontroli zestawu słuchawkowego Bluetooth
 Name:		bluezsco
 Version:	0.1
 Release:	0.1
